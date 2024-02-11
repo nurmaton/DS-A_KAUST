@@ -1,5 +1,5 @@
 class Node:
-    """Node constructor for our Signle-Linked List of integeres. // Input: Integer number // Output: Node with integer data and pointer to NIL"""
+    """Node constructor for our Signle-Linked List of integeres. // Input: Integer number // Output: Node object with integer data and pointer to None (NIL)"""
     def __init__(self, integerData):
         """Initialize self. (See help(type(self)) for accurate signature) and integerData (should be integer)."""
         if type(integerData) is int:
