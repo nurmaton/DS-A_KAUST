@@ -21,35 +21,59 @@ class SinglyLinkedList:
         newNode.next = self.head
         self.head = newNode
         
-    def int_list_delete(self, nodePosition):
-        """Method .int_list_delete(x) of the class SinglyLinkedList, where x is the node to delete, is a method for deleting a node x (1, 2, 3, ...) from ourSignle-Linked List. // Input: Positive integer number // Output: Updated Signle-Linked List after deleting the required node."""
-        if type(nodePosition) is not int or nodePosition != abs(nodePosition) or nodePosition == 0:
-            print("Node Position In The Delete Method Should Be Positive Integer")
-            exit(2)
-        else:
-            if self.head is None:
-                return
+    def int_list_delete(self, nodeToDelete):
+        """Method .int_list_delete(x) of the class SinglyLinkedList, where x is the node to delete, is a method for deleting a node x from ourSignle-Linked List. // Input: Node object // Output: Updated Signle-Linked List after deleting the required node."""
         
-            if nodePosition == 1:
-                self.head = self.head.next
-                return 
+        if self.head is None:
+            return
         
-            stepCounter = 1
-            pointer = self.head
-            newPointer = self.head
-            oldPointer = self.head
-            flag = 0
-            while pointer is not None:
-                if stepCounter == nodePosition:
-                    newPointer = pointer.next
-                    flag = 1
-                    break
-                else:
-                    stepCounter = stepCounter + 1
-                    oldPointer = pointer
-                    pointer = pointer.next
-            if flag == 1: 
-                oldPointer.next = newPointer
+        if self.head == nodeToDelete:
+            self.head = self.head.next
+            return
+
+        pointer = self.head
+        oldPointer = self.head
+        newPointer = self.head
+        flag = 0
+        while pointer is not None:
+            if pointer == nodeToDelete:
+                newPointer = pointer.next
+                flag = 1
+                break
+            else:
+                oldPointer = pointer
+                pointer = pointer.next
+        if flag == 1:
+            oldPointer.next = newPointer
+        
+        
+        # if type(nodePosition) is not int or nodePosition != abs(nodePosition) or nodePosition == 0:
+        #     print("Node Position In The Delete Method Should Be Positive Integer")
+        #     exit(2)
+        # else:
+        #     if self.head is None:
+        #         return
+        
+        #     if nodePosition == 1:
+        #         self.head = self.head.next
+        #         return 
+        
+        #     stepCounter = 1
+        #     pointer = self.head
+        #     newPointer = self.head
+        #     oldPointer = self.head
+        #     flag = 0
+        #     while pointer is not None:
+        #         if stepCounter == nodePosition:
+        #             newPointer = pointer.next
+        #             flag = 1
+        #             break
+        #         else:
+        #             stepCounter = stepCounter + 1
+        #             oldPointer = pointer
+        #             pointer = pointer.next
+        #     if flag == 1: 
+        #         oldPointer.next = newPointer
             
                     
     def printSLLContent(self):
