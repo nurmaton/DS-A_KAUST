@@ -1,7 +1,7 @@
 def MostProfit(P):
     """// Implements algorithm to find out when there is the best time to buy and then the best time to sell the stock in order to make the most profit.
        // Input: Array of stocks' prices P[0..n-1]
-       // Additional information: Use of function MostProfitRecursive(l, r) that do the same thing as our function MostProfit()
+       // Additional information: Use of function MostProfitRecursive(l, r) that do the same thing as our function MostProfit() but inputs are different
        // Output: A profit itself with a pair of days such that profit is positive and maximum, or if there is no way to make a profit, the corresponding message."""
     
     def MostProfitRecursive(start, end):
